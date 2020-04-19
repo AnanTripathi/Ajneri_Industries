@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "590318905453",
+    "firebase_url": "https://ajneri-industries.firebaseio.com",
+    "project_id": "ajneri-industries",
+    "storage_bucket": "ajneri-industries.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590318905453:android:fd65aa455a00263e653764",
+        "android_client_info": {
+          "package_name": "com.example.ajneriindustries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590318905453-tfqtlseoeirmi00n9hu6t2mrjrhhkm6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbtKw58bWCechEVSNHhr6rzrgbxOBjaXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "590318905453-tfqtlseoeirmi00n9hu6t2mrjrhhkm6b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
