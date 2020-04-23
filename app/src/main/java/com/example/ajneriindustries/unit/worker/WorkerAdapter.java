@@ -12,20 +12,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ajneriindustries.R;
+import com.example.ajneriindustries.unit.worker.workerpayment.WorkerPaymentActivity;
 
 import java.util.ArrayList;
 
 public class WorkerAdapter extends RecyclerView.Adapter<WorkerAdapter.ViewHolder> {
     private Context context;
+    private ArrayList<String> workerID;
+    private ArrayList<Worker> workersList;
 
-    public WorkerAdapter(Context context, ArrayList<String> workerID, ArrayList<Worker> workers) {
+    public WorkerAdapter(Context context, ArrayList<String> workerID, ArrayList<Worker> workersList) {
         this.context = context;
         this.workerID = workerID;
-        this.workers = workers;
+        this.workersList = workersList;
     }
 
-    private ArrayList<String> workerID=new ArrayList<>();
-    private ArrayList<Worker> workers=new ArrayList<>();
+
 
     @NonNull
     @Override
@@ -37,13 +39,27 @@ public class WorkerAdapter extends RecyclerView.Adapter<WorkerAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        holder.workerName.setText(workers.get(position).getName());
-        holder.leavingdateLayout.setVisibility(View.GONE);
+        holder.workerName.setText(workersList.get(position).getName());
+        if(workersList.get(position).getJoiningDate()==null)
+        {
         holder.joindateLayout.setVisibility(View.GONE);
+        }
+        else
+            {
+                holder.joindateTextView.setText(workersList.get(position).getJoiningDate().toString());
+            }
+        if(workersList.get(position).getLeavingDate()==null)
+        {
+            holder.leavingdateLayout.setVisibility(View.GONE);
+        }
+        else
+            {
+                holder.leavingdatetextView.setText(workersList.get(position).getLeavingDate().toString());
+            }
         holder.parentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(context,WorkerAdd.class);
+                Intent i=new Intent(context, WorkerPaymentActivity.class);
                 i.putExtra("worker_Id",workerID.get(position));
                 context.startActivity(i);
             }
@@ -68,9 +84,8 @@ public class WorkerAdapter extends RecyclerView.Adapter<WorkerAdapter.ViewHolder
             workerName= itemView.findViewById(R.id.worker_name);
             joindateLayout=itemView.findViewById(R.id.joining_date_layout);
             leavingdateLayout=itemView.findViewById(R.id.leaving_date_layout);
-            joindateTextView=itemView.findViewById(R.id.joining_date_text_view);
-            leavingdatetextView=itemView.findViewById(R.id.leaving_date_text_view);
-
+            joindateTextView=itemView.findViewById(R.id.joindate_text_view);
+            leavingdatetextView=itemView.findViewById(R.id.leaving_text_view);
         }
     }
 }

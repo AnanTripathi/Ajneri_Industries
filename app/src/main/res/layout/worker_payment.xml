@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="From:" />
+
+            <EditText
+                android:id="@+id/from_date_edittext"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:hint="10"
+                android:inputType="number" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/" />
+
+            <EditText
+                android:id="@+id/from_month_editext"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:hint="12"
+                android:inputType="number" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/" />
+
+            <EditText
+                android:id="@+id/from_year_editext"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:hint="2020"
+                android:inputType="number" />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="To:" />
+
+            <EditText
+                android:id="@+id/to_day_editext"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:hint="10"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/" />
+
+            <EditText
+                android:id="@+id/to_month_editext"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:hint="12"
+                android:inputType="number" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/" />
+
+            <EditText
+                android:id="@+id/to_year_editext"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:hint="2020"
+                android:inputType="number" />
+        </LinearLayout>
+</LinearLayout>
+
+    <Button
+        android:id="@+id/search_from_to_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="search" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginHorizontal="5dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Date"/>
+        <TextView
+            android:background="@android:color/holo_green_light"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="wage paid"
+            android:gravity="center"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:gravity="center"
+            android:text="total wage"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:background="@android:color/holo_red_light"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/payment_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/payment_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Total"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/total_wage_paid_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:gravity="center"
+            android:text="total paid"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_red_light"
+            android:gravity="center"
+            android:text="total wages"
+            android:id="@+id/total_wage_textview"
+            android:textSize="18sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/wage_to_be_paid_layout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="20dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Wage to be paid"/>
+            <TextView
+                android:textSize="20dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/wage_to_be_paid_textview"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/money_to_be_taken_back_layout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="20dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Money to be taken back"/>
+        <TextView
+            android:textSize="20dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/money_to_be_taken_back_textview"/>
+    </LinearLayout>
+
+</LinearLayout>
+    </ScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonAddWorkerPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_margin="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:srcCompat="@drawable/ic_add_circle_black_24dp" />
+</RelativeLayout>

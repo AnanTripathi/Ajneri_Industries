@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.TokenWatcher;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class WorkerActivity extends AppCompatActivity {
@@ -41,8 +43,11 @@ public class WorkerActivity extends AppCompatActivity {
         addWorker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Worker w=new Worker("Anan",null,null,null,"worker1");
-                workerReference.child("worker"+(workerID.size()+1)).setValue(w);
+                Intent i=new Intent(WorkerActivity.this,WorkerAdd.class);
+                i.putExtra("worker_id",unitkey+"worker"+(workerID.size()+1));
+                i.putExtra("unit_key",unitkey);
+                startActivity(i);
+
             }
         });
 
@@ -59,7 +64,8 @@ public class WorkerActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 workerID.add(dataSnapshot.getKey());
-                workerList.add((Worker)dataSnapshot.getValue());
+                Worker w=dataSnapshot.getValue(Worker.class);
+                workerList.add(w);
                 if(workerID.size()!=1){
                 adapter.notifyItemInserted(workerID.size()-1);}
                 addAdapter();

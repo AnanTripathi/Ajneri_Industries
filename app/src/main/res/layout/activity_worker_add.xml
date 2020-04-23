@@ -75,4 +75,12 @@
             android:src="@drawable/ic_add_circle_black_24dp"
             android:id="@+id/add_leaving_date"/>
     </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="save"
+        android:id="@+id/save_worker"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"/>
 </RelativeLayout>

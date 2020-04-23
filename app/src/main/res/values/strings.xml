@@ -3,4 +3,5 @@
     <string name="units_reference">Units</string>
     <string name="hint_password">password</string>
     <string name="worker_reference">worker</string>
+    <string name="wage_reference">Wages</string>
 </resources>

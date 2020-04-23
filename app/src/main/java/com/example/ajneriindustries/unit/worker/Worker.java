@@ -1,7 +1,8 @@
 package com.example.ajneriindustries.unit.worker;
 
+import com.example.ajneriindustries.unit.worker.workerpayment.DailyWage;
+
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Worker {
     private String name;
