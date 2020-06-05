@@ -32,6 +32,7 @@ public class UnitsActivity extends AppCompatActivity implements AddUnitDialog.Ad
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_units);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         unitsReference=FirebaseDatabase.getInstance().getReference().child(getResources().getString(R.string.units_reference));
         addUnitsButton=findViewById(R.id.floatingActionButton);
         unitChildEventListener=new ChildEventListener() {
